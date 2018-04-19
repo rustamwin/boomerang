@@ -3,17 +3,17 @@
  * @link http://activemedia.uz
  * @author Rustam Mamadaminov <rmamdaminov@gmail.com>.
  */
-const methods = require('require-dir')('./methods', { recurse: true });
+const methods = require('require-dir')('./methods', {recurse: true});
 const _ = require('lodash');
 const jayson = require("jayson/promise");
 
 function normalizeMethods(sub, glue) {
-    return function(map, value, key) {
+    return function (map, value, key) {
         let wildcard = sub ? sub + glue + key : key;
-        if(_.isFunction(value)) map[wildcard] = value;
-        else if(_.isObject(value)) map = _.reduce(value, normalizeMethods(wildcard, glue), map);
+        if (_.isFunction(value)) map[wildcard] = value;
+        else if (_.isObject(value)) map = _.reduce(value, normalizeMethods(wildcard, glue), map);
         return map;
-    }
+    };
 }
 const normalizedMethods = _.reduce(methods, normalizeMethods('', '.'), {});
 

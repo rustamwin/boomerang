@@ -8,6 +8,6 @@ module.exports = async params => {
     try {
         return '2.0';
     } catch (error) {
-        return Promise.reject({ message: error.message });
+        return Promise.reject({message: error.message});
     }
 };
