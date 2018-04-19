@@ -1,0 +1,18 @@
+/**
+ * Faker file
+ */
+
+exports.fake = function (faker) {
+    return {
+        // attributes here
+    };
+};
+
+exports.load = function (name) {
+    const modelClass = require(`../models/${name}`);
+    const data = require(`./data/${name}`);
+    data.forEach(async (el) => {
+        const model = new modelClass(el);
+        await model.save();
+    });
+};

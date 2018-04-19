@@ -1,14 +1,23 @@
 {
   "name": "boomerang",
   "version": "1.0.0",
-  "description": "",
+  "description": "jayson based json-rpc server",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "author": {
+    "name": "Rustam Mamadaminov",
+    "email": "rmamdaminov@gmail.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/rustamwin/boomerang.git"
+  },
   "dependencies": {
+    "chalk": "^2.4.0",
+    "commander": "^2.15.1",
     "faker": "^4.1.0",
     "jayson": "^2.0.5",
     "knex": "^0.14.4",

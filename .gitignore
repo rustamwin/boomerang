@@ -58,7 +58,6 @@ typings/
 .env
 
 
-node_modules
 .idea
 package-lock.json
 knexfile.js
