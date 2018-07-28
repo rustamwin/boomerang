@@ -92,7 +92,8 @@ program
     .action((name, cmd) => {
         try {
             const faker = require(`./fixtures/${name}`);
-            faker.load(name);
+            let count = faker.load(name);
+            console.log(chalk.green(`'${count}' data inserted`));
         } catch (err) {
             if (err.code === 'MODULE_NOT_FOUND') {
                 console.log(chalk.yellow(`fixture '${name}' not found`));

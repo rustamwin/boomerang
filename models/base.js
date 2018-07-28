@@ -81,8 +81,7 @@ class BaseModel {
 
     async load(data) {
         for (let att of this.attributes()) {
-            if (_.has(data, att)/* && att !== 'id'*/) {
-                console.log(_.get(data, att));
+            if (_.has(data, att)) {
                 this.setAttribute(att, _.get(data, att))
             }
         }
